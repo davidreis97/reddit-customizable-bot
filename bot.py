@@ -18,4 +18,3 @@ r.login(USERNAME, PASSWORD)
 
 if not os.path.isfile("comments_replied_to.txt"):
     posts_replied_to = []
- dss

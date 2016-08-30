@@ -3,44 +3,51 @@ import pdb
 import re
 import os
 import time
-
-with open("login-details.txt","r") as l:
-    login_details = l.read()
-    login_details = login_details.split("\n")
-
-user_agent = ("reverse-text 0.1 // Contact me at /u/SilverTroop or at https://github.com/davidreis97/")
-
-r = praw.Reddit(user_agent = user_agent)
-
-if not  os.path.isfile("login-details.txt"):
-    print ("You must create a file named login-details.txt with your username and password.")
+try:
+    from config_private import *
+except:
+    print("Please fill in your config.py correctly!")
     exit(1)
 
-#deprecated
-r.login(login_details[0], login_details[1])
-#deprecated
+r = praw.Reddit(user_agent = USER_AGENT)
 
-if not os.path.isfile("comments_answered.txt"):
+r.login(USERNAME,PASSWORD)
+
+if not os.path.isfile(ANSWERED_COMMENTS_FILE):
     comments_answered = []
 else:
-    with open("comments_answered.txt","r") as f:
+    with open(ANSWERED_COMMENTS_FILE,"r") as f:
         comments_answered = f.read()
         comments_answered = comments_answered.split("\n")
+        comments_answered.remove("")
 
 while 1:
-    print (comments_answered)
-    submissions = r.get_subreddit('bottesting').get_new(limit=1)
+    if DEBUG:
+        print (comments_answered)
+    else:
+        print ("Running...")
+    if POST_ORDER is "hot":
+        submissions = r.get_subreddit(SUBREDDIT).get_hot(limit=LIMIT)
+    elif POST_ORDER is "new":
+        submissions = r.get_subreddit(SUBREDDIT).get_new(limit=LIMIT)
+    elif POST_ORDER is "top":
+        submissions = r.get_subreddit(SUBREDDIT).get_top(limit=LIMIT)
+    elif POST_ORDER is "controversial":
+        submissions = r.get_subreddit(SUBREDDIT).get_controversial(limit=LIMIT)
+    elif POST_ORDER is "rising":
+        submissions = r.get_subreddit(SUBREDDIT).get_rising(limit=LIMIT)
+    else:
+        print (POST_ORDER, "is an invalid POST_ORDER, check your config.py file")
+        exit(1)
     for submission in submissions:
         for comment in submission.comments:
-            if '!reverse' in comment.body:
+            if KEY_WORD in comment.body:
                 com_sub_id = str(submission.id) + str(comment.id)
                 if com_sub_id not in comments_answered:
-                    response = comment.body.replace("!reverse ","",1)
-                    response = response[::-1]
-                    comment.reply("###reverse-text-bot\n" + response + "\n___________________\n**I am a bot that reverses text. Come find me at [GitHub](https://github.com/davidreis97/reddit-reverse-bot) or talk to my human creator, /u/SilverTroop**\n")
+                    comment.reply(COMMENT_PROCESSING(comment.body))
                     comments_answered.append(com_sub_id)
-                    with open("comments_answered.txt", "w") as w:
+                    with open(ANSWERED_COMMENTS_FILE, "w") as w:
                         for com_id in comments_answered:
                             w.write(com_id + "\n")
-                    print ("Answered to comment", comment, "in thread", submission)
-    time.sleep(10)
+                    print ("Answered to comment: ", comment.body, "\nIn thread: ", submission.title)
+    time.sleep(TIME_OUT)

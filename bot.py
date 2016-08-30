@@ -4,7 +4,7 @@ import re
 import os
 import time
 try:
-    from config import *
+    from config_private import *
 except:
     print("Please fill in your config.py correctly!")
     exit(1)

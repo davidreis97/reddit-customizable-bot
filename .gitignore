@@ -1,3 +1,6 @@
-
-login-details.txt
+__pycache__/*
+.__pycache__
+__pycache__
 comments_answered.txt
+__pycache__/config.cpython-35.pyc
+config_private.py

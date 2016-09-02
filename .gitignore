@@ -1,3 +1,5 @@
 __pycache__/*
 comments_answered.txt
 config_private.py
+
+.DS_Store

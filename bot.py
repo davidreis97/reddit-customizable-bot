@@ -3,11 +3,15 @@ import pdb
 import re
 import os
 import time
-try:
-    from config import *
-except:
-    print("Please fill in your config.py correctly!")
-    exit(1)
+#Allows me to use my own private config file without changing any code. You should only use config.py.
+if os.path.isfile('config_private.py'):
+    from config_private import *
+else:
+    try:
+        from config import *
+    except:
+        print("Please fill in your config.py correctly!")
+        exit(1)
 from login import *
 
 r = login()

@@ -28,8 +28,14 @@ def COMMENT_PROCESSING(comment):
     response = response[::-1]
     return("###reverse-text-bot\n" + response + "\n___________________\n**I am a bot that reverses text. Come find me at [GitHub](https://github.com/davidreis97/reddit-reverse-bot) or talk to my human creator, /u/SilverTroop**\n")
 
-#---------------------
-#DEVELOPMENT VARIABLES
-#---------------------
+#----------------------------------------------------------------------
+#DEVELOPMENT VARIABLES (don't change unless you know what you're doing)
+#----------------------------------------------------------------------
 
 DEBUG = 0
+
+CLIENT_ID = 'Qhe0Btx7BlYiXw'
+
+CLIENT_SECRET = ''
+
+REDIRECT_URI = 'http://redditcustomizablebot.comli.com/oauthcode.html'

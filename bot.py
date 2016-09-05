@@ -8,10 +8,9 @@ try:
 except:
     print("Please fill in your config.py correctly!")
     exit(1)
+from login import *
 
-r = praw.Reddit(user_agent = USER_AGENT)
-
-r.login(USERNAME,PASSWORD)
+r = login()
 
 if not os.path.isfile(ANSWERED_COMMENTS_FILE):
     comments_answered = []

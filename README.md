@@ -9,6 +9,6 @@ You can completely change the bot's purpose very easily just by changing the con
 Right now, the example code on config.py answers the reverse of a comment when it's preceded by "!reverse".
 
 ### To Do
-* Change the authentication method to OAuth2
-* Add more settings to config.py
-* Build an UI to completely remove the necessity of programming by the end user
+* Add more settings to config.py (Continuous task)
+* [x] Change the authentication method to OAuth2
+* [ ] Build an UI to completely remove the necessity of programming by the end user

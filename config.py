@@ -1,11 +1,5 @@
 #Use this file to edit the bot behaviour.
 
-#Reddit account username
-USERNAME =
-
-#Reddit account password
-PASSWORD =
-
 #Your user agent
 USER_AGENT =
 
@@ -27,11 +21,15 @@ KEY_WORD = "!reverse"
 #Time (in seconds) that the bot will wait after each search for comments (0 is not advised)
 TIME_OUT =
 
-#Function that receives the original comment and returns the answer that the bot shall post
+#Function that receives the original comment and returns the answer that the bot will post
 def COMMENT_PROCESSING(comment):
     #EXAMPLE CODE
     response = comment.replace(KEY_WORD,"",1)
     response = response[::-1]
     return("###reverse-text-bot\n" + response + "\n___________________\n**I am a bot that reverses text. Come find me at [GitHub](https://github.com/davidreis97/reddit-reverse-bot) or talk to my human creator, /u/SilverTroop**\n")
+
+#---------------------
+#DEVELOPMENT VARIABLES
+#---------------------
 
 DEBUG = 0

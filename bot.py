@@ -47,7 +47,7 @@ while 1:
             if KEY_WORD in comment.body:
                 com_sub_id = str(submission.id) + str(comment.id)
                 if com_sub_id not in comments_answered:
-                    comment.reply(COMMENT_PROCESSING(comment.body))
+                    comment.reply(COMMENT_PROCESSING(comment,submission))
                     comments_answered.append(com_sub_id)
                     with open(ANSWERED_COMMENTS_FILE, "w") as w:
                         for com_id in comments_answered:

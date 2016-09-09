@@ -22,9 +22,9 @@ KEY_WORD = "!reverse"
 TIME_OUT =
 
 #Function that receives the original comment and returns the answer that the bot will post
-def COMMENT_PROCESSING(comment):
+def COMMENT_PROCESSING(comment,submission):
     #EXAMPLE CODE
-    response = comment.replace(KEY_WORD,"",1)
+    response = comment.body.replace(KEY_WORD,"",1)
     response = response[::-1]
     return("###reverse-text-bot\n" + response + "\n___________________\n**I am a bot that reverses text. Come find me at [GitHub](https://github.com/davidreis97/reddit-reverse-bot) or talk to my human creator, /u/SilverTroop**\n")
 

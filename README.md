@@ -8,6 +8,11 @@ You can completely change the bot's purpose very easily just by changing the con
 
 Right now, the example code on config.py answers the reverse of a comment when it's preceded by "!reverse".
 
+### How to Run
+* Install the latest version of python 3 and install the "praw" package (Using the command `pip3 install praw`)
+* Fill in the blanks on config.py
+* Run `python3 bot.py` and follow the instructions to authenticate
+
 ### To Do
 * Add more settings to config.py (Continuous task)
 * [x] Change the authentication method to OAuth2

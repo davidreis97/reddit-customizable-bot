@@ -3,6 +3,7 @@ import pdb
 import re
 import os
 import time
+
 #Allows me to use my own private config file without changing any code. You should only use config.py.
 if os.path.isfile('config_private.py'):
     from config_private import *
@@ -22,7 +23,6 @@ else:
     with open(ANSWERED_COMMENTS_FILE,"r") as f:
         comments_answered = f.read()
         comments_answered = comments_answered.split("\n")
-        comments_answered.remove("")
 
 while 1:
     if DEBUG:
@@ -54,3 +54,4 @@ while 1:
                             w.write(com_id + "\n")
                     print ("Answered to comment: ", comment.body, "\nIn thread: ", submission.title)
     time.sleep(TIME_OUT)
+    

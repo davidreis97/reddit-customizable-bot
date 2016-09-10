@@ -18,7 +18,7 @@ POST_ORDER =
 #Key word that triggers the bot to answer a comment
 KEY_WORD = "!reverse"
 
-#Time (in seconds) that the bot will wait after each search for comments (0 is not advised)
+#Least amount of time (in seconds) that the bot will wait after each search for comments (0 is not advised)
 TIME_OUT =
 
 #Function that receives the original comment and returns the answer that the bot will post

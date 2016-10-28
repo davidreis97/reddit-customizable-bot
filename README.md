@@ -15,6 +15,7 @@ Right now, the example code on config.py answers the reverse of a comment when i
 * Run `python3 bot.py` and follow the instructions to authenticate
 
 ### To Do
-* Add more settings to config.py (Continuous task)
 * [x] Change the authentication method to OAuth2
+* [ ] Allow the user to (safely) save his login
+* [ ] Give access to more information on the COMMENT_PROCESSING function (post info,parent comment user info, etc)
 * [ ] Build an UI to completely remove the necessity of programming by the end user

@@ -6,7 +6,7 @@ USER_AGENT =
 #File name in which you wish to keep record of the comments the bot already answered
 ANSWERED_COMMENTS_FILE = "comments_answered.txt"
 
-#SUBREDDIT on which you wish to search for posts
+#SUBREDDIT on which you wish to search for posts (without the "/r")
 SUBREDDIT =
 
 #How many posts do you wish to search for
@@ -29,7 +29,7 @@ def COMMENT_PROCESSING(comment,submission):
     return("###reverse-text-bot\n" + response + "\n___________________\n**I am a bot that reverses text. Come find me at [GitHub](https://github.com/davidreis97/reddit-reverse-bot) or talk to my human creator, /u/SilverTroop**\n")
 
 #----------------------------------------------------------------------
-#DEVELOPMENT VARIABLES (don't change unless you know what you're doing)
+#ADVANCED VARIABLES (don't change unless you know what you're doing)
 #----------------------------------------------------------------------
 
 DEBUG = 0

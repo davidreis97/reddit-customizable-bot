@@ -32,10 +32,14 @@ def COMMENT_PROCESSING(comment,submission):
 #ADVANCED VARIABLES (don't change unless you know what you're doing)
 #----------------------------------------------------------------------
 
+#If you wish to have access to any other scope on reddit other than 'read', 'submit' and 'identity' insert them here in the form ['scope1','scope2',...] or leave [] if you do not wish to add any other scope.
+#Documentation for all available reddit API scopes at https://www.reddit.com/dev/api/oauth/
+EXTRA_SCOPE = []
+
 DEBUG = 0
 
 CLIENT_ID = 'Qhe0Btx7BlYiXw'
 
-CLIENT_SECRET = ''
+CLIENT_SECRET = 'NONE'
 
 REDIRECT_URI = 'http://redditcustomizablebot.comli.com/oauthcode.html'

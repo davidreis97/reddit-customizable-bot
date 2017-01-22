@@ -30,15 +30,15 @@ while 1:
     else:
         print ("Running...")
     if POST_ORDER is "hot":
-        submissions = r.get_subreddit(SUBREDDIT).get_hot(limit=LIMIT)
+        submissions = r.subreddit(SUBREDDIT).hot(limit=LIMIT)
     elif POST_ORDER is "new":
-        submissions = r.get_subreddit(SUBREDDIT).get_new(limit=LIMIT)
+        submissions = r.subreddit(SUBREDDIT).new(limit=LIMIT)
     elif POST_ORDER is "top":
-        submissions = r.get_subreddit(SUBREDDIT).get_top(limit=LIMIT)
+        submissions = r.subreddit(SUBREDDIT).top(limit=LIMIT)
     elif POST_ORDER is "controversial":
-        submissions = r.get_subreddit(SUBREDDIT).get_controversial(limit=LIMIT)
+        submissions = r.subreddit(SUBREDDIT).controversial(limit=LIMIT)
     elif POST_ORDER is "rising":
-        submissions = r.get_subreddit(SUBREDDIT).get_rising(limit=LIMIT)
+        submissions = r.subreddit(SUBREDDIT).rising(limit=LIMIT)
     else:
         print (POST_ORDER, "is an invalid POST_ORDER, check your config.py file")
         exit(1)

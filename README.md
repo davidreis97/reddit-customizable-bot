@@ -14,8 +14,8 @@ Right now, the example code on config.py answers the reverse of a comment when i
 
 ### How to Run
 * Install the latest stable version of [Python 3](https://www.python.org/)
-* Install the [PRAW](https://pypi.python.org/pypi/praw) package (Using the command `pip3 install praw`)
-* Install the [PyCrypto](https://pypi.python.org/pypi/pycrypto/) package (Using the command `pip3 install pycrypto`). This step is optional but recommended, as it will allow you to store your reddit login information on your computer.
+* Install the [PRAW](https://pypi.python.org/pypi/praw) package (Using the command `pip3 install praw`). Version 4.6.0 is compatible.
+* Install the [PyCrypto](https://pypi.python.org/pypi/pycrypto/) package (Using the command `pip3 install pycrypto`). Version 2.6.1 is compatible. This step is optional but recommended, as it will allow you to store your reddit login information on your computer.
 * Fill in the blanks on config.py
 * Run `python3 bot.py` and follow the instructions to authenticate
 

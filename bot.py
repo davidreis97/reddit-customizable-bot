@@ -1,8 +1,13 @@
-import praw
 import pdb
 import re
 import os
 import time
+import sys
+try:
+    import praw
+except:
+    print("Please read the README and install all the required dependencies. (PRAW is missing)")
+    sys.exit()
 
 #Allows me to use my own private config file without changing any code. You should only use config.py.
 if os.path.isfile('config_private.py'):

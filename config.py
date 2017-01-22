@@ -32,8 +32,9 @@ def COMMENT_PROCESSING(comment,submission):
 #ADVANCED VARIABLES (don't change unless you know what you're doing)
 #----------------------------------------------------------------------
 
-#If you wish to have access to any other scope on reddit other than 'read', 'submit' and 'identity' insert them here in the form ['scope1','scope2',...] or leave [] if you do not wish to add any other scope.
-#Documentation for all available reddit API scopes at https://www.reddit.com/dev/api/oauth/
+#OPTIONAL - If you wish to have access to any other scope on reddit other than 'read', 'submit' and 'identity' insert them here in the form ['scope1','scope2',...] or leave [] if you do not wish to add any other scope.
+#Documentation for all reddit API scopes available at https://www.reddit.com/dev/api/oauth/
+#Any time you wish to change this you cannot login with the saved data on your computer.
 EXTRA_SCOPE = []
 
 DEBUG = 0
